@@ -11,6 +11,7 @@
 		C17EE7C527B15B7E0013F3DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EE7C427B15B7E0013F3DE /* ContentView.swift */; };
 		C17EE7C727B15B830013F3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17EE7C627B15B830013F3DE /* Assets.xcassets */; };
 		C17EE7CA27B15B830013F3DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17EE7C927B15B830013F3DE /* Preview Assets.xcassets */; };
+		C17EE7D127B1614E0013F3DE /* ClassExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EE7D027B1614E0013F3DE /* ClassExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C17EE7C427B15B7E0013F3DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C17EE7C627B15B830013F3DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C17EE7C927B15B830013F3DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C17EE7D027B1614E0013F3DE /* ClassExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C17EE7C227B15B7E0013F3DE /* Arithmetic_AceApp.swift */,
 				C17EE7C427B15B7E0013F3DE /* ContentView.swift */,
+				C17EE7D027B1614E0013F3DE /* ClassExample.swift */,
 				C17EE7C627B15B830013F3DE /* Assets.xcassets */,
 				C17EE7C827B15B830013F3DE /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C17EE7C527B15B7E0013F3DE /* ContentView.swift in Sources */,
+				C17EE7D127B1614E0013F3DE /* ClassExample.swift in Sources */,
 				C17EE7C327B15B7E0013F3DE /* Arithmetic_AceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
