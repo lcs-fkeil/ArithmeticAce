@@ -10,7 +10,7 @@ import SwiftUI
 struct ClassExample: View {
     var body: some View {
         
-        VStack {
+        VStack(spacing: 0) {
             HStack {
                 Text("✕")
                 
@@ -20,12 +20,23 @@ struct ClassExample: View {
                     Text("6")
                 }
             }
-            .font(.system(size: 72))
-            .padding()
+           
+            
+            
             Divider()
-
+            
+            HStack {
+                
+                Image(systemName: "checkmark.circle")
+                    .foregroundColor(.green)
+                Spacer()
+                Text("30")
+            }
+            Spacer()
         }
-      
+        .padding(.horizontal)
+        .font(.system(size: 72))
+        
     }
 }
 
