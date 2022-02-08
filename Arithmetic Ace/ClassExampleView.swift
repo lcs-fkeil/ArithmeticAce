@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ClassExampleView: View {
     // MARK: Stored properties
-        let multiplicand = Int.random(in: 1...12)
-        let multiplier = Int.random(in: 1...12)
+        @State var multiplicand = Int.random(in: 1...12)
+        @State var multiplier = Int.random(in: 1...12)
+    
+        // This String containes whatever the user types in
         @State var inputGiven = ""
 
         // Has an answer been checked?
@@ -74,6 +76,24 @@ struct ClassExampleView: View {
                     }
                 }, label: {
                     Text("Check Answer")
+                        .font(.largeTitle)
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
+                
+                Button (action: {
+                    // Generate new question
+                    multiplicand = Int.random(in: 1...12)
+                    multiplier = Int.random(in: 1...12)
+                    
+                    // Reset properties that track what's happening with the current question
+                    answerChecked = false
+                    answerCorrect = false
+                    
+                    // Reset the input field
+                    inputGiven = ""
+                }, label: {
+                    Text("New Question")
                         .font(.largeTitle)
                 })
                     .padding()
