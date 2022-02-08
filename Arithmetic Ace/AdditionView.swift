@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AdditionView: View {
     // MARK: Stored properties
-        let additionand = Int.random(in: 1...12)
-        let additioner = Int.random(in: 1...12)
+        @State var additionand = Int.random(in: 1...12)
+        @State var additioner = Int.random(in: 1...12)
         @State var inputGiven = ""
 
         // Has an answer been checked?
