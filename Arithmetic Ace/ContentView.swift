@@ -11,9 +11,7 @@ struct ContentView: View {
     var body: some View {
        
         VStack {
-            
             HStack{
-                
                 Text("X")
                     .padding()
                 Spacer()
@@ -23,8 +21,6 @@ struct ContentView: View {
                 }
                 .padding()
             }
-            
-            
             HStack{
                 Spacer()
                 Text("5")
@@ -32,10 +28,8 @@ struct ContentView: View {
                     .font(.title)
                     .bold()
                     .padding()
-                
             }
             HStack {
-                
                 Text("X")
                     .font(.title)
                     .bold()
@@ -50,7 +44,6 @@ struct ContentView: View {
                     .padding()
             }
             HStack{
-                
                 Text("Check mark")
                     .padding()
                 Spacer()

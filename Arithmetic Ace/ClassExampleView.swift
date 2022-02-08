@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClassExample: View {
+struct ClassExampleView: View {
     // MARK: Stored Properties
     let multiplicand = Int.random(in: 1...12)
     let multiplier = Int.random(in: 1...12)
@@ -77,8 +77,8 @@ struct ClassExample: View {
     }
 }
 
-struct ClassExample_Previews: PreviewProvider {
+struct ClassExampleView_Previews: PreviewProvider {
     static var previews: some View {
-        ClassExample()
+        ClassExampleView()
     }
 }
