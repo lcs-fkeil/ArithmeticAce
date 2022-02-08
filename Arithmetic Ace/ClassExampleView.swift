@@ -44,60 +44,73 @@ struct ClassExampleView: View {
                 Divider()
                 
                 HStack {
-                    Image(systemName: "checkmark.circle")
-                        .foregroundColor(.green)
-                        //        CONDITION      true  false
+                    ZStack {
+                        Image(systemName: "checkmark.circle")
+                            .foregroundColor(.green)
+                            //      CONDITION   true  false
                         .opacity(answerCorrect ? 1.0 : 0.0)
+                        Image (systemName: "x.circle")
+                            .foregroundColor(.red)
+                            //        CONDITION1   AND   CONDITION2           true  false
+                            .opacity(answerChecked && answerCorrect == false ? 1.0 : 0.0)
+                    }
                     Spacer()
                     TextField("",
                               text: $inputGiven)
                         .multilineTextAlignment(.trailing)
+                    
                 }
 
-                Button(action: {
+                ZStack {
+                    Button(action: {
 
-                    // Answer has been checked!
-                    answerChecked = true
+                        // Answer has been checked!
+                        answerChecked = true
 
-                    // Convert the input given to an integer, if possible
-                    guard let productGiven = Int(inputGiven) else {
-                        // Sadness, not a number
-                        answerCorrect = false
-                        return
-                    }
+                        // Convert the input given to an integer, if possible
+                        guard let productGiven = Int(inputGiven) else {
+                            // Sadness, not a number
+                            answerCorrect = false
+                            return
+                        }
 
-                    // Check the answer!
-                    if productGiven == correctProduct {
-                        // Celebrate! 👍🏼
-                        answerCorrect = true
-                    } else {
-                        // Sadness, they gave a number, but it's not correct 😭
-                        answerCorrect = false
-                    }
-                }, label: {
-                    Text("Check Answer")
-                        .font(.largeTitle)
-                })
-                    .padding()
+                        // Check the answer!
+                        if productGiven == correctProduct {
+                            // Celebrate! 👍🏼
+                            answerCorrect = true
+                        } else {
+                            // Sadness, they gave a number, but it's not correct 😭
+                            answerCorrect = false
+                        }
+                    }, label: {
+                        Text("Check Answer")
+                            .font(.largeTitle)
+                    })
+                        .padding()
                     .buttonStyle(.bordered)
+                    .opacity(answerChecked ? 0.0 : 1.0)
+                    
+                    Button (action: {
+                        // Generate new question
+                        multiplicand = Int.random(in: 1...12)
+                        multiplier = Int.random(in: 1...12)
+                        
+                        // Reset properties that track what's happening with the current question
+                        answerChecked = false
+                        answerCorrect = false
+                        
+                        // Reset the input field
+                        inputGiven = ""
+                    }, label: {
+                        Text("New Question")
+                            .font(.largeTitle)
+                    })
+                        .padding()
+                        .buttonStyle(.bordered)
+                        .opacity(answerChecked ? 1.0 : 0.0)
+                }
                 
-                Button (action: {
-                    // Generate new question
-                    multiplicand = Int.random(in: 1...12)
-                    multiplier = Int.random(in: 1...12)
-                    
-                    // Reset properties that track what's happening with the current question
-                    answerChecked = false
-                    answerCorrect = false
-                    
-                    // Reset the input field
-                    inputGiven = ""
-                }, label: {
-                    Text("New Question")
-                        .font(.largeTitle)
-                })
-                    .padding()
-                    .buttonStyle(.bordered)
+                
                 
                 Spacer()
             }
