@@ -1,16 +1,16 @@
 //
-//  AdditionView.swift
+//  SubtractionView.swift
 //  Arithmetic Ace
 //
-//  Created by Franka Keil on 2022-02-07.
+//  Created by Franka Keil on 2022-02-08.
 //
 
 import SwiftUI
 
-struct AdditionView: View {
+struct SubtractionView: View {
     // MARK: Stored properties
-    @State var augend = Int.random(in: 1...12)
-    @State var addend = Int.random(in: 1...12)
+    @State var minuend = Int.random(in: 1...12)
+    @State var subtrahend = Int.random(in: 1...12)
     
     // This String containes whatever the user types in
     @State var inputGiven = ""
@@ -24,20 +24,20 @@ struct AdditionView: View {
     // MARK: Computed properties
     // What is the correct product?
     var correctProduct: Int {
-        return augend + addend
+        return minuend - subtrahend
     }
     
     var body: some View {
         
         VStack(spacing: 0) {
             HStack {
-                Text("+")
+                Text("-")
                 
                 Spacer()
                 
                 VStack(alignment: .trailing) {
-                    Text("\(augend)")
-                    Text("\(addend)")
+                    Text("\(minuend)")
+                    Text("\(subtrahend)")
                 }
             }
             
@@ -94,8 +94,8 @@ struct AdditionView: View {
                 
                 Button (action: {
                     // Generate new question
-                    augend = Int.random(in: 1...12)
-                    addend = Int.random(in: 1...12)
+                    minuend = Int.random(in: 1...12)
+                    subtrahend = Int.random(in: 1...12)
                     
                     // Reset properties that track what's happening with the current question
                     answerChecked = false
@@ -118,14 +118,13 @@ struct AdditionView: View {
         }
         .padding(.horizontal)
         .font(.system(size: 72))
-        .navigationTitle("Addition")
+        .navigationTitle("Subtraction")
     }
 }
-
-struct AdditionView_Previews: PreviewProvider {
+struct SubtractionView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AdditionView()
+            SubtractionView()
         }
     }
 }

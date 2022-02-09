@@ -118,12 +118,15 @@ struct ClassExampleView: View {
         }
         .padding(.horizontal)
         .font(.system(size: 72))
+        .navigationTitle("Multiplication")
         
     }
 }
 
 struct ClassExampleView_Previews: PreviewProvider {
     static var previews: some View {
-        ClassExampleView()
+        NavigationView {
+            ClassExampleView()
+        }
     }
 }
